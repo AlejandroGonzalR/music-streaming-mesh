@@ -82,7 +82,6 @@ exports.getTrackByID = handler((req, res) => {
 
 exports.uploadTrack = handler((req, res) => {
     upload.single('track')(req, res, (err) => {
-        console.log(req.body);
         if (err) {
             return res.status(400).json({ message: "Error in upload request validation." });
         } else if(!req.body.name) {
@@ -108,7 +107,7 @@ exports.uploadTrack = handler((req, res) => {
         });
 
         uploadStream.on('finish', () => {
-            return res.status(201).json({ message: `File uploaded successfully, stored under Mongo ObjectID:  ${ID}.` });
+            return res.status(201).json({ message: `File uploaded successfully, stored under Mongo ObjectID: ${ID}.` });
         });
     });
 });
