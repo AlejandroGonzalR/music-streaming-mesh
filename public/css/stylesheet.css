@@ -1,0 +1,88 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(#fff 35%, #f1f3f4 100%);
+}
+
+#main-container {
+    height: 100%;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+header {
+    height: 74px;
+    margin: 0 auto;
+    width: 70%;
+    padding: 15px;
+    color: #c0c1c2;
+}
+
+header > * {
+    float: right;
+}
+
+header > small {
+    line-height: 3.5;
+    margin-right: 10px;
+}
+
+#submit-track {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 1px dashed #c1c1c1;
+    background: #fff;
+    color: #c0c1c2;
+    text-align: center;
+}
+
+#submit-track > i {
+    position: absolute;
+    transform: translate(-45%, -50%);
+}
+
+#tracks-area {
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: row;
+    z-index: 10;
+    justify-content: center;
+}
+
+#track-info {
+    margin-right: 35px;
+}
+
+#track-info > img {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+#tracks-list {
+    margin: 30px 0 0 -10px;
+    width: 350px;
+    height: 350px;
+    overflow-y: auto;
+}
+
+#tracks-list > li {
+    margin: 15px 0;
+}
+
+#controls {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+#audio {
+    width: 70%;
+}
+
+.toast-body {
+    color: rgba(255, 255, 255, 0.83);
+}

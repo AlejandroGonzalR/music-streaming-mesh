@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || '0.0.0.0';
 
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const socket = require('socket.io');
@@ -19,6 +20,10 @@ app.use(cors());
 app.options('*', cors());
 app.use('/tracks', trackRoute);
 
+app.engine('pug', require('pug').__express);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
