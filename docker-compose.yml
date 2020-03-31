@@ -1,0 +1,46 @@
+version: '3'
+services:
+  music-stream-1:
+    container_name: "music-stream-1"
+    build: .
+    ports:
+      - "10000:80"
+    restart: on-failure
+    env_file: .env
+    environment:
+      IS_LEADER: $LEADER
+      DB_ROOT_URI: $DB_ROOT_URI
+      HOST: $SOCKET_HOST
+      PORT: 10000
+    network_mode: "host"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:10000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  music-stream-2:
+    container_name: "music-stream-2"
+    build: .
+    ports:
+      - "10001:8080"
+    restart: on-failure
+    env_file: .env
+    environment:
+      DB_ROOT_URI: $DB_ROOT_URI
+      HOST: music-stream-1
+      PORT: 10001
+    network_mode: "host"
+
+  music-stream-3:
+    container_name: "music-stream-3"
+    build: .
+    ports:
+      - "10002:8080"
+    restart: on-failure
+    env_file: .env
+    environment:
+      DB_ROOT_URI: $DB_ROOT_URI
+      HOST: music-stream-1
+      PORT: 10002
+    network_mode: "host"
