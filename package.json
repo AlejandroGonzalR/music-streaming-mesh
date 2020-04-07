@@ -1,6 +1,10 @@
 {
   "name": "music-streaming-mesh",
   "version": "1.0.0",
+  "description": "Distributed topology of a music streaming service implementing the PoET consensus algorithm.",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
@@ -11,5 +15,12 @@
     "pug": "^2.0.4",
     "socket.io": "^2.3.0",
     "winston": "^3.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlejandroGonzalR/music-streaming-mesh"
+  },
+  "keywords": [],
+  "author": "Alejandro González Rodríguez",
+  "license": "MIT"
 }
