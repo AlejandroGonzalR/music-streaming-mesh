@@ -14,7 +14,7 @@ This will recreate three containers available in ports 10000 to 10002, each inst
 
 ## Built With
 
-* [Node.js 12.16.1 LTS](https://maven.apache.org/) - Runtime environment
+* [Node.js 12.16.1 LTS](https://nodejs.org/en/) - Runtime environment
 * See also the used [packages](https://github.com/AlejandroGonzalR/berkeley-algorithm/blob/master/package.json) for more details
 
 ## Authors
